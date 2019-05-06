@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --colorOne: #CD5941;
+            --colorTwo: rgb(229, 212, 194);
+
+        }
+
+        html {
+            color: var(--colorOne);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .boxCarts {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            display: flex;
+            padding: 20px 5px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            justify-content: space-around;
+            background-color: var(--colorTwo);
+
+        }
+
+        .boxCarts div {
+            width: 180px;
+            height: 300px;
+            background-color: var(--colorOne);
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .boxCarts div span {
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--colorTwo);
+            line-height: 300px;
+        }
+
+        .cartOne {
+            transform: rotateY(0);
+            transition: 1s;
+        }
+
+        .cartTwo {
+            transform: rotateY(0);
+            transition: 1s;
+        }
+
+        .cartThree {
+            transform: rotateY(0);
+            transition: 1s;
+        }
+
+        .activeboxCarts {
+            transform: rotateY(180deg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .btnReset {
+            position: absolute;
+            top: calc(50% + 150px + 40px + 5px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 40px;
+            background-color: var(--colorOne);
+            color: var(--colorTwo);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 40px;
+            transition: .5s;
+        }
+
+
+        .btnReset:hover {
+            background-color: var(--colorTwo);
+            color: var(--colorOne);
+
+        }
+
+        .results {
+            position: absolute;
+            top: calc(50% + 150px + 40px + 43px + 5px + 5px);
+            left: 50%;
+            width: 80%;
+            transform: translate(-50%, -50%);
+            background-color: var(--colorTwo);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .results {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .results .currentResult,
+        .results .totalResult {
+            color: var(--colorOne);
+            padding: 5px;
+            text-align: center;
+        }
+
+        .results .currentResult {
+            width: 30%;
+        }
+
+        .results .totalResult {
+            width: 70%;
+        }
+
+        @media (min-width: 1024px) {
+            .boxCarts {
+                width: 60%;
+            }
+
+            .btnReset {
+                width: 60%;
+            }
+
+            .results {
+                width: 60%;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .boxCarts {
+                width: 50%;
+            }
+
+            .btnReset {
+                width: 50%;
+            }
+
+            .results {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="boxCarts">
+        <div class="cartOne"><span>click</span></div>
+        <div class="cartTwo"><span>click</span></div>
+        <div class="cartThree"><span>click</span></div>
+    </section>
+    <section class="btnReset">reset</section>
+    <section class="results">
+        <div class="currentResult"><span></span></div>
+        <div class="totalResult">Total points: <span></span></div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
